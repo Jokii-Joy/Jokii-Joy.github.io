@@ -1,0 +1,20 @@
+#+TITLE: Interview questions
+#+AUTHOR: Bei Fang
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css"/>
+
+
+#+BEGIN_SRC C++
+  #include <iostream>
+  int main(void) {
+    std::cout << "hello world!" << std::endl;
+    return 0;
+  }
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+  (+ 2 3)
+#+END_SRC
+
+
+#+RESULTS:
+: 5

@@ -1,0 +1,13 @@
+#+TITLE: index
+#+AUTHOR: Bei Fang
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./style1.css"/>
+#+OPTIONS: ':nil *:nil -:nil ::nil <:nil H:3 \n:nil ^:nil
+#+OPTIONS: author:t c:t creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:nil email:nil f:nil inline:nil num:t p:nil pri:nil stat:nil
+#+OPTIONS: tags:nil tasks:nil tex:nil timestamp:t toc:nil todo:nil |:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="index.css" />
+
+* c++
++ [[https://adeepmind.github.io/c++/template.html][Templates and Generic Programming]]
+* Design Pattern
++ [[https://adeepmind.github.io/design_pattern/singleton.html][Singleton]]

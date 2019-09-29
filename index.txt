@@ -1,0 +1,28 @@
+			       ━━━━━━━━━━
+				 INDEX
+
+
+				Bei Fang
+			       ━━━━━━━━━━
+
+
+
+
+
+1 c++
+═════
+
+  ⁃ [Templates and Generic Programming]
+
+
+  [Templates and Generic Programming]
+  https://adeepmind.github.io/c++/template.html
+
+
+2 Design Pattern
+════════════════
+
+  ⁃ [Singleton]
+
+
+  [Singleton] https://adeepmind.github.io/design_pattern/singleton.html

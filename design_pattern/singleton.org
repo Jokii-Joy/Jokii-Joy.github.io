@@ -1,0 +1,120 @@
+#+TITLE: Singleton
+#+AUTHOR: Bei Fang
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css"/>
+
+The singleton pattern is a design pattern that restricts the instantiation
+of a class to one object.
+* Classic Implementation(lazy)
+#+BEGIN_SRC c++
+class Singleton {
+public:
+  static Singleton *getInstance();
+private:
+  Singleton();
+  static Singleton *instance_;
+};
+Singleton::Singleton() {}
+Singleton *Singleton::instance_ = nullptr;
+Singleton *Singleton::getInstance() {
+  if (instance_ == nullptr)
+    instance_ = new Singleton;
+  return instance_;
+}
+#+END_SRC
+Here we have declared getInstance() static so that we can call it without
+instantiating the class. The first time getInstance() is called it creates
+a new singleton object and after that it returns the same object. This is
+called lazy instantiation.
+
+* Thread Safe
+The above method is that it is not thread safe. Multiple threads create
+multiple objects for singleton. The follow implementation is thread safe.
+#+BEGIN_SRC c++
+mutex m;
+class Singleton {
+public:
+  static Singleton *getInstance();
+private:
+  Singleton();
+  static Singleton *instance_;
+};
+Singleton::Singleton() {}
+Singleton *Singleton::instance_ = nullptr;
+Singleton *Singleton::getInstance() {
+  m.lock();
+  if (instance_ == nullptr)
+    instance_ = new Singleton;
+  m.unlock();
+  return instance_;
+}
+#+END_SRC
+Here using mutex makes sure that only one thread at a time can execute
+getInstance(). The main disadvantage of this is method is that using mutex
+every time while creating the singleton object is expensive and may decrease
+the performance of your program.
+
+* Use "Double Checked Locking"
+If you notice carefully once an object is created mutex is no longer useful
+because now variable instance_ will not be null and any squence of operations
+will lead to consistent results. So we will only acquire lock on the getInstance()
+once, when the instance_ is null.
+#+BEGIN_SRC c++
+mutex m;
+class Singleton {
+public:
+  static Singleton *getInstance();
+private:
+  Singleton();
+  static Singleton *instance_;
+};
+Singleton::Singleton() {}
+Singleton *Singleton::instance_ = nullptr;
+Singleton *Singleton::getInstance() {
+  if (instance_ == nullptr) {
+    m.lock();
+    if (instance_ == nullptr)
+      instance_ = new Singleton;
+    m.unlock();
+  }
+  return instance_;
+}
+#+END_SRC
+* Eager Instantiation
+#+BEGIN_SRC c++
+class Singleton {
+public:
+  static Singleton *getInstance();
+private:
+  Singleton();
+  static Singleton *instance_;
+};
+Singleton::Singleton() {}
+Singleton *Singleton::instance_ = new Singleton();
+Singleton *Singleton::getInstance() {
+   return instance_;
+}
+#+END_SRC
+Here we have created instance of singleton in static initializer. This is
+thread safe. Use this method only when your singleton class is light and 
+is used throughout the execution of your program.
+* Magic Static
+#+BEGIN_SRC c++
+class Singleton final {
+public:
+  static Singleton &getInstance();
+private:
+  Singleton() = default;
+  ~Singleton() = default;
+
+  Singleton(const Singleton&) = delete;
+  Singleton(Singleton&&) = delete;
+  Singleton& operator=(const Singleton&) = delete;
+  Singleton& operator=(Singleton&) = delete;
+};
+
+Singleton& Singleton::getInstance() {
+  static Singleton instance;
+  return instance;
+}
+#+END_SRC
+Supported for c++11 and later versions.

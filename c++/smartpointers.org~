@@ -1,0 +1,7 @@
+#+TITLE: Smart Pointers
+#+AUTHOR: Bei Fang
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css"/>
+#+OPTIONS: ^:nil
+* shared_ptr
+** 初始化
+1. shared_ptr<T> p = 

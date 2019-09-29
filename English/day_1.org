@@ -1,0 +1,20 @@
+#+TITLE: BBC News
+#+AUTHOR: Bei Fang
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css"/>
+#+OPTIONS: ^:nil
+[[https://adeepmind.github.io/index.html][Home]]
+
+*Brain hack devices must be scrutinized, say top scientists*
+
+*Devices that merge machines with human brain need to be investigated,
+a study has said.*
+
+In future, "people could become telepathic to some degree" and being
+able to read someone else's thoughts raises ethical issues, expert said.
+
+This could become especially worrying if those toughts were shared with
+corporations.
+
+Commercial products should not come from "a handful of companies", they added.
+
+
