@@ -6,5 +6,5 @@
 #+OPTIONS: e:nil email:nil f:nil inline:nil num:t p:nil pri:nil stat:nil
 #+OPTIONS: tags:nil tasks:nil tex:nil timestamp:t toc:nil todo:nil |:nil
 
-* Translation
-+ [[https://adeepmind.github.io/translate/volatile.html][为什么不使用"volatile"]]
+* 杂谈
++ [[https://Jokii-Joy.github.io/inspiration/movies.html][电影]]
