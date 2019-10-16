@@ -1,5 +1,5 @@
 #+TITLE: Table Contents
-#+AUTHOR: Bei Fang
+#+AUTHOR: Jokii Joy
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./style.css"/>
 #+OPTIONS: ':nil *:nil -:nil ::nil <:nil H:3 \n:nil ^:nil
 #+OPTIONS: author:t c:t creator:comment d:(not "LOGBOOK") date:t
